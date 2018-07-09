@@ -1,32 +1,24 @@
 class Exercises
+  # Find a longer word.
+  #
+  # @param [Array] words the compare length
+  # @return [String] Longest word found.
   def long_word(*words)
-    max_length = ''
-
-    words.each do |word|
-      max_length = word if word.size > max_length.size
-    end
-
-    max_length
+    words.map(&:to_s).max_by(&:size)
   end
 
+  # Random number between 10.00 and 100.00
+  #
+  # @return [String] Generated number.
   def random_number
     sprintf('%.2f', rand(10.00..100.00))
   end
 
+  # Convert uppercase to lowercase and lowercase to uppercase
+  #
+  # @param [String] word to convert
+  # @return [String] Converted word.
   def swapcase(word)
-    word_swapcase = ''
-
-    word.each_char do |w|
-      case
-      when /[a-z]/.match(w)
-        word_swapcase += w.upcase
-      when /[A-Z]/.match(w)
-        word_swapcase += w.downcase
-      else
-        word_swapcase += w
-      end
-    end
-
-    word_swapcase
+    word.to_s.chars.map { |w| w.downcase! ? w.downcase : w.upcase }.join
   end
 end
