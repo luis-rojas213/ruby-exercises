@@ -20,15 +20,15 @@ describe Exercises, "#random_number" do
 end
 
 describe Exercises, "#swapcase" do
-	context "when parameter is string" do
+  context "when parameter is string" do
     it { exercise.swapcase('abcdefghi') }
     it { exercise.swapcase('ABCDEFGHI') }
     it { exercise.swapcase('ABCdefGhI') }
   end
 
   context "when parameter not string" do
-  	it { exercise.swapcase(123456) }
-  	it { exercise.swapcase(-123456) }
-  	it { exercise.swapcase(123456.7) }
+    it { exercise.swapcase(123456) }
+    it { exercise.swapcase(-123456) }
+    it { exercise.swapcase(123456.7) }
   end
 end
