@@ -11,7 +11,7 @@ class Exercises
   #
   # @return [String] Generated number.
   def random_number
-    sprintf('%.2f', rand(10.00..100.00))
+    rand(10.00..100.00).round(2)
   end
 
   # Convert uppercase to lowercase and lowercase to uppercase
@@ -19,6 +19,6 @@ class Exercises
   # @param [String] word to convert
   # @return [String] Converted word.
   def swapcase(word)
-    word.to_s.chars.map { |w| w.downcase! ? w.downcase : w.upcase }.join
+    word.to_s.chars.map { |w| w.downcase! ? w : w.upcase }.join
   end
 end
