@@ -19,6 +19,7 @@ class Exercises
   # @param [String] word to convert
   # @return [String] Converted word.
   def swapcase(word)
+    raise ArgumentError unless word.is_a?(String)
     word.to_s.chars.map { |w| w.downcase! ? w : w.upcase }.join
   end
 end
