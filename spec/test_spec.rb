@@ -5,17 +5,17 @@ describe Exercises, '#long_word' do
   subject { Exercises.long_word(*params) }
 
   context 'when parameters are string' do
-    let(:params) { ['hola','chau','probando'] }
+    let(:params) { ['hola', 'chau', 'probando'] }
     it { is_expected.to eq('probando') }
   end
 
   context 'when parameters are equal in length' do
-    let(:params) { ['lunes','martes','jueves'] }
+    let(:params) { ['lunes', 'martes', 'jueves'] }
     it { is_expected.to eq('martes') }
   end
 
   context 'when parameters are not string' do
-    let(:params) { [1234,12345,20000,1234] }
+    let(:params) { [1234, 12345, 20000, 1234] }
     it { is_expected.to eq('12345') }
   end
 
@@ -52,13 +52,19 @@ describe Exercises, '#swapcase' do
 
   context 'when parameter not string' do
     let(:params) { 12345678 }
-    it { expect { should }.to raise_error(ArgumentError) }
+    it { expect { subject }.to raise_error(ArgumentError) }
   end
 
   context 'when wrong parameters' do
     let(:params) { ['abcdef'] }
-    it { expect { should }.to raise_error(ArgumentError) }
-    it { expect { Exercises.swapcase('abcdef','ABCDE') }.to raise_error(ArgumentError) }
+    it { expect { subject }.to raise_error(ArgumentError) }
+  end
+
+  context 'when sending two parameters' do
+    it { expect { Exercises.swapcase('abcdef', 'ABCDE') }.to raise_error(ArgumentError) }
+  end
+
+  context 'when not sending parametres' do
     it { expect { Exercises.swapcase }.to raise_error(ArgumentError) }
   end
 end
